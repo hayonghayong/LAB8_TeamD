@@ -11,6 +11,9 @@ Route::get('/','TeamController@index');
 // 新規連絡登録
 Route::post('/messages','TeamController@store'); 
 
+// ログアウト
+Route::get('/logout','TeamController@getLogout');
+
 
 
 // 今の所ここまで修正

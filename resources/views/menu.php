@@ -19,7 +19,7 @@
         <li class="navi"><a href="input">新規作成</a></li>
         <li class="navi"><a href="schedule">スケジュール</a></li>
         <li class="navi"><a href=””>ユーザー一覧</a></li>
-        <li class="navi"><a href=””>ログアウト</a></li>
+        <li class="navi"><a href="/logout">ログアウト</a></li>
       </ul>
     </nav>
   </header>

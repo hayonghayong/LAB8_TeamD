@@ -24,6 +24,7 @@ $messages = Message::orderBy('created_at', 'asc')->get();
         'messages' => $messages
     ]);
 }
+
 //新規連絡登録
 public function store(Request $request) {
   //バリデーション
@@ -44,4 +45,11 @@ $messages->published = '2017-03-07 00:00:00';
 $messages->save(); 
 return redirect('/');
 }
+
+ public function getLogout(){
+  Auth::logout();
+  return redirect('/');
+  }
 }
+
+
