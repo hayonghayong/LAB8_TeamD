@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<title>Book List</title>
+<title>ログイン画面</title>
 <!-- CSS と JavaScript -->
 
 
@@ -14,7 +14,9 @@
         <!-- ナビバーの内容 -->
         </nav>
     </div>
+    <div class="container">
     @yield('content')
+    </div>
 </body>
 </html>
 

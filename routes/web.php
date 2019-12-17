@@ -95,3 +95,7 @@ Route::delete('/message/{message}', function (Message $message) {
     //
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
