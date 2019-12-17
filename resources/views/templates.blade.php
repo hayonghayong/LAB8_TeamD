@@ -23,7 +23,7 @@
   <div class="container">
     <!--Section: Modals-->
     <section>
-      <h2 class="h1-responsive font-weight-bold text-center">一言登録</h2>
+      <h2 class="h1-responsive font-weight-bold text-center">新規連絡作成画面</h2>
       <div class="border border-light px-5 py-2 mt-2 mb-4">
 
         <form id="message-form" name="message-form" action="{{ url('messages') }}" method="POST">
