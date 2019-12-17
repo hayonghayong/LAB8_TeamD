@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'arial narrow';
+}
+
+body ::-webkit-input-placeholder {
+  color: white;
+}
+.wrapper {
+  background:linear-gradient(177.79740183823418deg, rgba(195, 229, 248,1) 49.44021968736798%,rgba(236, 236, 236,1) 76.48922686945501%);
+  width: 100%;
+  height: 100%;
+}
+.wrapper.form-success .container h1 {
+  transform: translateY(85px);
+  transition-duration:2s;
+}
+.container {
+  text-align: center;
+  padding-top: 20%;
+}
+@media screen and (max-width:480px){
+  .container {
+  padding-top: 50%;
+}
+}
+.container h1 {
+  font-size: 50px;
+  font-weight: bold;
+  color: white;
+  text-shadow:2px 2px 9px lightgray;
+}
+@media screen and (max-width:480px){
+  .container h1 {
+  font-size: 20px;
+}
+}
+
+form {
+  padding: 20px 0;
+  position: relative;
+}
+form input {
+  appearance: none;
+  outline: 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 300px;
+  border-radius: 3px;
+  padding: 15px 15px;
+  margin: 0 auto 30px auto;
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  color: white;
+  -webkit-transition-duration: 0.25s;
+          transition-duration: 0.25s;
+  font-weight: 300;
+}
+form input:hover {
+  background-color: lightgray;
+}
+form input:focus {
+  background-color: white;
+  width: 300px;
+  color: blue;
+}
+form button {
+          appearance: none;
+  outline: 0;
+  background-color:rgba(255, 255, 255, 0.2);
+  border: 0;
+  padding: 10px 15px;
+  color:white;
+  border-radius: 3px;
+  width: 250px;
+  cursor: pointer;
+  font-size: 18px;
+  transition-duration: 0.25s;
+}
+form button:hover {
+  background-color: #f5f7f9;
+  color: blue;
+}
+#new{
+ padding-top: 10px;
+}
+/* 雪 */
+.snow {
+  color: snow;
+  font-size: 20px;
+  /*初期位置*/
+  position: fixed;
+  top: -5%;
+  /*雪そのものを幅に適当な幅で降らせる*/
+  text-shadow:
+  5vw   -100px 2px,
+  10vw  -400px 3px,
+  15vw  -300px 3px,
+  20vw  -500px 4px,
+  25vw  -540px 4px,
+  30vw  -580px 1px,
+  35vw  -400px 1px,
+  39vw  -250px 2px,
+  42vw  -340px 5px,
+  50vw  -200px 5px,
+  56vw  -150px 2px,
+  60vw  -100px 2px,
+  63vw  -180px 0,
+  70vw  -150px 0,
+  78vw  -220px 4px,
+  83vw  -200px 4px,
+  86vw  -320px 9px,
+  90vw  -300px 9px,
+  94vw  -170px 7px;
+  /*アニメーションさせる*/
+  animation: anim 20s ease-in infinite;
+}
+@keyframes anim {
+  100% {
+    color: transparent;
+    top: 150%;
+  }
+}

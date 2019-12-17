@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="new_user.css">
+  <script src="https://code.jquery.com/jquery-2.1.0.min.js"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+  <title>新規会員登録</title>
+</head>
+<body>
+  <div id="formWrapper">
+    <div id="form">
+      <h1>新規会員登録</h1>
+      <div class="form-item">
+        <p class="formLabel">名前</p>
+        <input type="name" name="name" id="name" class="form-style" autocomplete="off" />
+      </div>
+      <div class="form-item">
+        <p class="formLabel">ID</p>
+        <input type="id" name="id" id="id" class="form-style" />
+      </div>
+      <div class="form-item">
+        <p class="formLabel">パスワード</p>
+        <input type="pw" name="pw" id="pw" class="form-style" />
+      </div>
+      <div class="form-item">
+        <p class="formLabel">施設ID</p>
+        <input type="shisetu_id" name="shisetu_id" id="shisetu_id" class="form-style" />
+      </div>
+      <div class="form-item">
+        <p class="formLabel">施設パスワード</p>
+        <input type="shisetu_pw" name="shisetu_pw" id="shisetu_pw" class="form-style" />
+      </div>
+      <div class="form-item">
+        <input type="submit" class="login" value="会員登録">
+      </div>
+    </div>
+  </div>
+
+  <script>
+  $(document).ready(function ()
+    {
+      var formInputs = $('input[type="name"],input[type="id"],input[type="pw"],input[type="shisetu_id"],input[type="shisetu_pw"]');
+      formInputs.focus(function ()
+      {
+        $(this).parent().children('p.formLabel').addClass('formTop');
+        $('div#formWrapper').addClass('darken-bg');
+      });
+      formInputs.focusout(function ()
+      {
+        if ($.trim($(this).val()).length == 0) {
+          $(this).parent().children('p.formLabel').removeClass('formTop');
+        }
+      });
+      $('p.formLabel').click(function ()
+      {
+        $(this).parent().children('.form-style').focus();
+      });
+    });
+  </script>
+</body>
+
+</html>
