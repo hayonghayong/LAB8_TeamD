@@ -94,3 +94,4 @@ return redirect('/');
 Route::delete('/message/{message}', function (Message $message) {
     //
 });
+
