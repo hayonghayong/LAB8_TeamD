@@ -90,7 +90,7 @@
     </section>
     <!--Section: Modals-->
     <section>
-      <h2 class="h1-responsive font-weight-bold text-center">二言三覧</h2>
+      <h2 class="h1-responsive font-weight-bold text-center">二言一覧</h2>
       <div class="border border-light px-5 py-2 mt-2 mb-4">
       <table class="table table-striped task-table">
 
