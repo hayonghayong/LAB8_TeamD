@@ -14,15 +14,8 @@
   <link href="css/trend.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
-
-
-<ul>
-  <li><a href="{{ url('index') }}">Top</a></li>
-  <li><a href="{{ url('input') }}">Input</a></li>
-  <li><a href="{{ url('schedule') }}">Schedule</a></li>
-  <li><a href="{{ url('contact') }}">Contact</a></li>
-</ul>
+<!-- メニュー表示 -->
+@include('menu')
 
 <!--Main layout-->
 <main>
