@@ -17,12 +17,12 @@
 
 
 
-<!-- <ul>
+<ul>
   <li><a href="{{ url('index') }}">Top</a></li>
   <li><a href="{{ url('input') }}">Input</a></li>
   <li><a href="{{ url('schedule') }}">Schedule</a></li>
   <li><a href="{{ url('contact') }}">Contact</a></li>
-</ul> -->
+</ul>
 
 <!--Main layout-->
 <main>
