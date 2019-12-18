@@ -79,7 +79,7 @@ div.form-item .form-style:focus{
   border:1px solid deeppink; 
   color:deeppink;
 }
-div.form-item p.formLabel {
+div.form-item .for-group {
     position: absolute;
     left:26px;
     top:2px;
@@ -97,7 +97,7 @@ div.form-item p.formLabel {
 .formStatus{
   color:#8a8a8a !important;
 }
-.login{
+#login{
   font-size: 20px;
   width: 112px;
   height: 37px;
@@ -112,12 +112,12 @@ div.form-item p.formLabel {
   border:none;
   color: #fff;
 }
-input[type="submit"].login:hover{
+input[type="submit"]#login:hover{
   background-color: #fff; 
   border:1px solid deeppink; 
   color:deeppink; 
   cursor:pointer;
 }
-input[type="submit"].login:focus{
+input[type="submit"]#login:focus{
   outline: none;
 }

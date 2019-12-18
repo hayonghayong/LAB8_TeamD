@@ -87,6 +87,9 @@ form button:hover {
 #new{
  padding-top: 10px;
 }
+#forget{
+ padding-top: 10px;
+}
 /* 雪 */
 .snow {
   color: snow;

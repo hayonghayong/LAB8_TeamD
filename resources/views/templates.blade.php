@@ -23,7 +23,7 @@
   <div class="container">
     <!--Section: Modals-->
     <section>
-      <h2 class="h1-responsive font-weight-bold text-center">一言登録</h2>
+      <h2 class="h1-responsive font-weight-bold text-center">新規連絡作成画面</h2>
       <div class="border border-light px-5 py-2 mt-2 mb-4">
 
         <form id="message-form" name="message-form" action="{{ url('messages') }}" method="POST">
@@ -35,36 +35,29 @@
             </div>
             <div class="md-form mt-0">
               <div class="border border-light rounded d-flex flex-wrap  justify-content-center mt-3 px-2 py-3">
-                  <button type="button" class="btn btn-outline-mdb-color waves-effect">quote1</button>
-                  <button type="button" class="btn btn-outline-mdb-color waves-effect">quote2</button>
-                  <button type="button" class="btn btn-outline-mdb-color waves-effect">quote3</button>
-                  <button type="button" class="btn btn-outline-mdb-color waves-effect">quote4</button>
+              @foreach ($templates as $template)
+                  <button type="button" class="btn btn-outline-mdb-color waves-effect">{{ $template->template }}</button>
+                  @endforeach
               </div>
+            </div>
             </div>
             <input type="hidden" name="user_id" value="">
           </div>
           <!-- Sign in button -->
-          <button class="btn btn-info btn-block my-4" type="submit">Send</button>
+          <button class="btn btn-info btn-block my-4" name="send" type="submit">Send</button>
         </form>
 
 
         <form id="message-form2" name="message-form2" action="{{ url('templates') }}" method="POST">
-        <input type="hidden" name="template" value="test">
-        <button class="btn btn-info btn-block my-4" type="submit">定型文を送る</button>
+        {{ csrf_field() }}
+        <input type="hidden" id="template" name="template" value="">
+        <button class="btn btn-info btn-block my-4" id=templateSend>定型文を送る</button>
         </form>
 
         
       </div>
     </section>
     <!--Section: Modals--> 
-
-    <div class="md-form mt-0">
-              <div class="border border-light rounded d-flex flex-wrap  justify-content-center mt-3 px-2 py-3">
-              @foreach ($templates as $template)
-                  <button type="button" class="btn btn-outline-mdb-color waves-effect">{{ $template->content }}</button>
-                  @endforeach
-              </div>
-            </div>
 
 
   </div>
@@ -80,6 +73,22 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
+
+<script>
+     $("#templateSend").on("click",function(){
+      let text = $("#content").val();
+      console.log(text);
+      $("#template").val(text);
+      $("#message-form2").submit();
+
+     })   
+        // let text = document.getElementById('content').value;     
+        // console.log(text);
+        // document.getElementById("message-form2").submit();
+    
+</script>
+
+
 <!--Main javascript END-->
 
 </body>
