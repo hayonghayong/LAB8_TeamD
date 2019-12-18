@@ -50,6 +50,12 @@ return redirect('/');
   Auth::logout();
   return redirect('/');
   }
+
+// スケジュールを表示
+public function shcedule(){
+    return view('shcedule');
+}
+
 }
 
 

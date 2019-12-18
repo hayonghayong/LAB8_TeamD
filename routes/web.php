@@ -14,6 +14,8 @@ Route::post('/messages','TeamController@store');
 // ログアウト
 Route::get('/logout','TeamController@getLogout');
 
+// スケジュールを表示
+Route::get('/shcedule','TeamController@shcedule');
 
 
 // 今の所ここまで修正
