@@ -41,7 +41,7 @@ Route::get('/input', function () {
 
 
 
-Route::post('/input', function (Request $request) {
+Route::post('/templates', function (Request $request) {
     //
     //バリデーション
     $validator = Validator::make($request->all(), [

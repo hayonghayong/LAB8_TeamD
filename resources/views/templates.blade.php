@@ -49,7 +49,8 @@
 
 
         <form id="message-form2" name="message-form2" action="{{ url('templates') }}" method="POST">
-        <input type="hidden" name="template" value="test">
+        {{ csrf_field() }}
+        <input type="hidden" id="template" name="template" value="test">
         <button class="btn btn-info btn-block my-4" type="submit">定型文を送る</button>
         </form>
 
