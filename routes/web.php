@@ -38,7 +38,7 @@ Route::get('/index', function () {
 });
 
 Route::get('/input', function () {
-    $templates = Template::orderBy('created_at', 'asc')->get();
+    $templates = Template::where('user_id',Auth::user()->id)->orderBy('created_at', 'asc')->get();
     return view('templates', [
         'templates' => $templates
     ]);
@@ -66,7 +66,7 @@ Route::post('/templates', function (Request $request) {
 // Eloquent モデル
 $templates = new Template;
 $templates->template = $request->template;
-$templates->user_id = '1';
+$templates->user_id = Auth::user()->id;
 $templates->published = '2017-03-07 00:00:00';
 $templates->save(); 
 return redirect('/input');
@@ -77,9 +77,9 @@ return redirect('/input');
 /**
 * 本を削除 
 */
-Route::delete('/message/{message}', function (Message $message) {
-    //
-});
+Route::delete('/input/{template}', function (Template $template) {
+    $template->delete();
+    return redirect('/'); });
 
 
 Auth::routes();

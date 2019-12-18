@@ -33,25 +33,31 @@
               <textarea type="text" id="content" name="content" rows="2" class="form-control md-textarea"></textarea>
               <label for="content">一言</label>
             </div>
-            <div class="md-form mt-0">
-              <div id="tmpBtn" class="border border-light rounded d-flex flex-wrap justify-content-center mt-3 px-2 py-3">
-              @foreach ($templates as $template)
-                <button type="button" class="btn btn-outline-mdb-color waves-effect">{{ $template->template }}</button>
-              @endforeach
-              </div>
-            </div>
-            </div>
+            
+      </div>
             <input type="hidden" name="user_id" value="">
           </div>
           <!-- Sign in button -->
           <button class="btn btn-info btn-block my-4" name="send" type="submit">Send</button>
         </form>
-
+        <div class="md-form mt-0">
+              <div id="tmpBtn" class="border border-light rounded d-flex flex-wrap justify-content-center mt-3 px-2 py-3">
+              @foreach ($templates as $template)
+                <button type="button" class="btn btn-outline-mdb-color waves-effect">{{ $template->template }}</button>
+                <!-- <a href="#{{ $template->template }}" class="btn btn-sm">❌</a> -->
+                <form action="{{ url('input/'.$template->id) }}" method="POST">
+                {{ csrf_field() }}
+{{ method_field('DELETE') }}
+<button type="submit" class="btn btn-danger"> 削除</button>
+        </form>
+              @endforeach
+              </div>
+            </div>
 
         <form id="message-form2" name="message-form2" action="{{ url('templates') }}" method="POST">
         {{ csrf_field() }}
         <input type="hidden" id="template" name="template" value="">
-        <button class="btn btn-info btn-block my-4" id=templateSend>定型文を送る</button>
+        <button class="btn btn-info btn-block my-4" id=templateSend>定型文を登録</button>
         </form>
 
         
