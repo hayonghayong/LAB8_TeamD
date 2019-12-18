@@ -4,6 +4,7 @@
 use App\Message;
 use App\Template;
 use Illuminate\Http\Request;
+use App\User;
 
 // 連絡一覧へ表示
 Route::get('/','TeamController@index');
@@ -19,8 +20,15 @@ Route::get('/schedule', function () {
     return view('schedule');
 });
 
+// ユーザー一覧表示
+Route::get('/ichiran','TeamController@ichiran');
+
+// ユーザー削除
+Route::delete('/user/{user}','TeamController@destroy');
+
 
 // 今の所ここまで修正
+
 Route::get('/index', function () {
     $messages = Message::orderBy('created_at', 'asc')->get();
     return view('index', [
