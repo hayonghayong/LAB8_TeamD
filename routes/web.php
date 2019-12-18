@@ -41,7 +41,7 @@ Route::get('/input', function () {
 
 
 
-Route::post('/input', function (Request $request) {
+Route::post('/templates', function (Request $request) {
     //
     //バリデーション
     $validator = Validator::make($request->all(), [
@@ -50,7 +50,7 @@ Route::post('/input', function (Request $request) {
 
     //バリデーション:エラー 
     if ($validator->fails()) {
-        return redirect('/')
+        return redirect('/input')
             ->withInput()
             ->withErrors($validator);
     }
@@ -61,7 +61,7 @@ $templates->template = $request->template;
 $templates->user_id = '1';
 $templates->published = '2017-03-07 00:00:00';
 $templates->save(); 
-return redirect('/');
+return redirect('/input');
 
 
 });
