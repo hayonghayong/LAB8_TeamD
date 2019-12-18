@@ -34,10 +34,10 @@
               <label for="content">一言</label>
             </div>
             <div class="md-form mt-0">
-              <div class="border border-light rounded d-flex flex-wrap  justify-content-center mt-3 px-2 py-3">
+              <div id="tmpBtn" class="border border-light rounded d-flex flex-wrap justify-content-center mt-3 px-2 py-3">
               @foreach ($templates as $template)
-                  <button type="button" class="btn btn-outline-mdb-color waves-effect">{{ $template->template }}</button>
-                  @endforeach
+                <button type="button" class="btn btn-outline-mdb-color waves-effect">{{ $template->template }}</button>
+              @endforeach
               </div>
             </div>
             </div>
@@ -75,17 +75,18 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
 
 <script>
-     $("#templateSend").on("click",function(){
-      let text = $("#content").val();
-      console.log(text);
-      $("#template").val(text);
-      $("#message-form2").submit();
+$("#templateSend").on("click",function(){
+  let text = $("#content").val();
+  console.log(text);
+  $("#template").val(text);
+  $("#message-form2").submit();
+})
 
-     })   
-        // let text = document.getElementById('content').value;     
-        // console.log(text);
-        // document.getElementById("message-form2").submit();
-    
+$(document).ready(function() {
+  $('#tmpBtn button').click(function(){
+    $('#content').append($(this).text());
+  });
+});
 </script>
 
 
