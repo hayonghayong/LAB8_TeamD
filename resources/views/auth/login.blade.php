@@ -4,7 +4,7 @@
 <div class="wrapper">
 <div class="container">
     <h1 class="panel-heading">連絡アプリへようこそ</h1>
-    <form class="form-horizontal" method="POST" action="{{ route('login') }}">
+    <form id="send" class="form-horizontal" method="POST" action="{{ route('login') }}">
         {{ csrf_field() }}
         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
             <div class="col-md-6">
@@ -47,9 +47,13 @@
 <script>
 $("#login-button").click(function(event){
 event.preventDefault();
-
 $('form').fadeOut(100);
 $('.wrapper').addClass('form-success');
+setTimeout(function(){
+$("#send").submit();
+// location.href = "index";
+}, 2000);
+
 });
 </script>
 @endsection
