@@ -46,6 +46,18 @@
             </div>
         </div>
         <div class="form-item">
+            <div class="form-group">
+                <label for="password-confirm" class="col-md-4 control-label">施設名</label>
+                <input id="shisetuName" type="shisetuName" class="form-style" name="shisetuName" required>
+            </div>
+        </div>
+        <div class="form-item">
+            <div class="form-group">
+                <label for="password-confirm" class="col-md-4 control-label">施設ID</label>
+                <input id="shisetuID" type="shisetuID" class="form-style" name="shisetuID" required>
+            </div>
+        </div>
+        <div class="form-item">
             <input type="submit" class="btn btn-primary" id="login" value="会員登録">
         </div>
     </form>
