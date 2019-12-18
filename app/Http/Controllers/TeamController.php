@@ -50,6 +50,7 @@ return redirect('/');
   Auth::logout();
   return redirect('/');
   }
+
 }
 
 
