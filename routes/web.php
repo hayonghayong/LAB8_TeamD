@@ -1,6 +1,4 @@
 <?php
-
-
 use App\Message;
 use App\Template;
 use Illuminate\Http\Request;
@@ -12,14 +10,8 @@ Route::get('/','TeamController@index');
 
 // 新規連絡登録
 Route::post('/messages','TeamController@store'); 
-
 // ログアウト
 Route::get('/logout','TeamController@getLogout');
-
-// スケジュールを表示
-Route::get('/schedule', function () {
-    return view('schedule');
-});
 
 // ユーザー一覧表示
 Route::get('/ichiran','TeamController@ichiran');
@@ -35,18 +27,15 @@ return view('contact');
 // メール送信機能
 // Route::get('/mail', 'MailSendController');
 
-/**
-* 本のダッシュボード表示 */
-Route::get('schedule', function () { //
-});
-/**
-* 新「本」を追加 */
-Route::post('/schedule', function (Request $request) { //
-});
-/**
-* 本を削除 */
-Route::delete('/book/{book}', function (Book $book) { //
-});
+// カレンダーに予定追加
+Route::post('/schedule','ScheduleController@store');
+
+// カレンダーに予定表示
+Route::get('/schedule','ScheduleController@index');
+
+// 予定削除
+Route::delete('/schedules/{schedules}', 
+'ScheduleController@destroy');
 
 // 今の所ここまで修正
 

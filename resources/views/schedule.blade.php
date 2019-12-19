@@ -15,10 +15,11 @@
             </table>
           </div>
           <div class="card-body">
-            <form id="schedule-form" name="schedule-form" action="schedule.php" method="POST">
+            <form id="schedule-form" name="schedule-form" action="{{ url('schedule') }}" method="POST">
+              {{ csrf_field() }}
               <div class="form-group">
                 <div class="md-form mb-0">
-                  <input type="date" id="date" name="date" class="form-control md-text p-0"></input>
+                  <input type="date" id="date" name="date" class="form-control md-text p-0">
                   <label for="date mb-0">日付</label>
                 </div>
                 <div class="md-form mb-0">
@@ -46,6 +47,36 @@
   </div>
 </main>
 <!--Main layout-->
+<!-- 予定表示 -->
+@if (count($schedules) > 0)
+<table class="table table-striped task-table">
+<!-- テーブルヘッダ -->
+<thead> <th>予定表示</th>
+<!-- テーブル本体 -->
+<tbody>
+@foreach ($schedules as $schedules)
+<tr>
+<td class="table-text">
+<div> {{ $schedules->date }} </div> </td>
+<td class="table-text">
+<div> {{ $schedules->schedules }} </div> </td>
+<td class="table-text">
+<div> {{ $schedules->name }} </div> </td>
+<!-- <削除ボタン>  -->
+<td>
+  <form action="{{ url('schedules/'.$schedules->id) }}" method="POST"> {{ csrf_field() }}
+{{ method_field('DELETE') }}
+<button type="submit" class="btn btn-danger"> 削除
+</button>
+</form>
+</td> 
+</tr>
+@endforeach
+</tbody>
+ </table>
+</div> 
+</div>
+@endif
 
 <!--Main javascript-->
 <!-- JQuery -->
