@@ -26,6 +26,13 @@ Route::get('/ichiran','TeamController@ichiran');
 // ユーザー削除
 Route::delete('/user/{user}','TeamController@destroy');
 
+// コンタクト画面表示
+Route::get('/contact', function () {
+return view('contact');
+});
+
+// メール送信機能
+// Route::get('/mail', 'MailSendController');
 
 // 今の所ここまで修正
 

@@ -1,4 +1,5 @@
-
+@extends('layouts.app')
+@section('content')
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -27,9 +28,6 @@
   <!-- newsticker CSS END-->
 </head>
 <body>
-<!-- メニュー表示 -->
-@include('menu')
-
 <!--Main layout-->
 <main>
   <div class="container">
@@ -131,5 +129,6 @@
 <!-- newsticker JavaScript -->
 <script src="js/getTrend.js"></script>
 <!-- newsticker JavaScript END-->
+@endsection
 </body>
 </html>
