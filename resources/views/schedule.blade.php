@@ -14,6 +14,10 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet"> 
   <!--Main CSS END-->
 
+  <!--Menu CSS-->
+  <link rel="stylesheet" href="/css/menu.css">
+  <!--Menu CSS END-->
+
   <!-- js-calender CSS -->
   <link href="js-calender/css/calender.css" rel="stylesheet" type="text/css" />
   <!-- js-calender CSS END-->

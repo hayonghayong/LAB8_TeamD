@@ -18,6 +18,10 @@
   <!--Menu CSS-->
   <link rel="stylesheet" href="/css/menu.css">
   <!--Main CSS END-->
+
+  <!--Menu CSS-->
+  <link rel="stylesheet" href="/css/menu.css">
+  <!--Menu CSS END-->
 </head>
 <body>
 <!-- メニュー表示 -->

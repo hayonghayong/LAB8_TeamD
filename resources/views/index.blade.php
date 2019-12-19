@@ -22,6 +22,10 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet"> 
   <!--Main CSS END-->
 
+  <!--Menu CSS-->
+  <link rel="stylesheet" href="/css/menu.css">
+  <!--Menu CSS END-->
+
   <!-- newsticker CSS-->
   <link href="css/trend.css" rel="stylesheet" type="text/css" />
   <!-- newsticker CSS END-->
