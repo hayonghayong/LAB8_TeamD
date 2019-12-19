@@ -5,6 +5,7 @@ use App\Message;
 use App\Template;
 use Illuminate\Http\Request;
 use App\User;
+use App\Schedule;
 
 // 連絡一覧へ表示
 Route::get('/','TeamController@index');
@@ -33,6 +34,19 @@ return view('contact');
 
 // メール送信機能
 // Route::get('/mail', 'MailSendController');
+
+/**
+* 本のダッシュボード表示 */
+Route::get('schedule', function () { //
+});
+/**
+* 新「本」を追加 */
+Route::post('/schedule', function (Request $request) { //
+});
+/**
+* 本を削除 */
+Route::delete('/book/{book}', function (Book $book) { //
+});
 
 // 今の所ここまで修正
 
