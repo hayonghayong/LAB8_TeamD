@@ -7,7 +7,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>連絡帳アプリ</title>
   <!--Main CSS-->
-  <!-- Font Awesome -->
+   <!-- PWA -->
+<!--https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/?hl=ja-->
+<meta name="theme-color" content="#F8F7F8">
+<link rel="manifest" href="/manifest.json">
+<script>
+if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('/sw.js');
+}
+</script>
+<!-- PWA -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
@@ -89,7 +98,7 @@
     </section>
     <!--Section: Modals-->
     <section>
-      <h2 class="h1-responsive font-weight-bold text-center">二言三覧</h2>
+      <h2 class="h1-responsive font-weight-bold text-center">一言一覧</h2>
       <div class="border border-light px-5 py-2 mt-2 mb-4">
         @foreach ($messages as $message)
         <div class="card card-comments my-4 wow fadeIn">
