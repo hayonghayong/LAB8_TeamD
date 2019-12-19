@@ -7,16 +7,14 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>連絡帳アプリ</title>
   <!--Main CSS-->
-   <!-- PWA -->
-<!--https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/?hl=ja-->
-<meta name="theme-color" content="#F8F7F8">
-<link rel="manifest" href="/manifest.json">
-<script>
-if('serviceWorker' in navigator){
-    navigator.serviceWorker.register('/sw.js');
-}
-</script>
-<!-- PWA -->
+  <!-- PWA -->
+  <!--https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/?hl=ja-->
+  <meta name="theme-color" content="#F8F7F8">
+  <link rel="manifest" href="/manifest.json">
+  <script>
+  if('serviceWorker' in navigator){ navigator.serviceWorker.register('/sw.js'); }
+  </script>
+  <!-- PWA -->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
   <!-- Bootstrap core CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">

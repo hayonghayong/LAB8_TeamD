@@ -47,6 +47,19 @@
             </div>
             <div class="form-item">
                 <div class="form-group">
+                    <label class="col-md-4 control-label form-style">権限</label>
+                    <div class="radioBox form-style">
+                        <div class="radio">
+                            <input type="radio" id="kanri_1" name="kanri" val="1">
+                            <label for="kanri_1">管理者</label>
+                            <input type="radio" id="kanri_0" name="kanri" val="0" checked>
+                            <label for="kanri_0">一般</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-item">
+                <div class="form-group">
                     <label for="password-confirm" class="col-md-4 control-label form-style">施設名</label>
                     <input id="shisetuName" type="text" class="form-style" name="shisetuName" required>
                 </div>
@@ -59,13 +72,10 @@
             </div>
             <div class="form-item">
                 <input type="submit" class="btn btn-primary" id="login" value="会員登録">
+                <a href="{{ route('login') }}" class="link-item">戻る</a>
             </div>
         </form>
     </div>
-    <div class="link-item">
-        <a href="{{ route('login') }}"style="text-decoration:none;">戻る</a>
-    </div>
-</div>
 <script src="../../../js/jquery-2.1.3.min.js"></script>
 <script>
 $(document).ready(function (){
