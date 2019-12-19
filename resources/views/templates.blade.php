@@ -13,6 +13,14 @@
   <!-- Material Design Bootstrap -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet"> 
   <!--Main CSS END-->
+
+  <!--Menu CSS-->
+  <link rel="stylesheet" href="/css/menu.css">
+  <!--Menu CSS END-->
+
+  <style>
+   #tmpBtn{ max-height:12rem; overflow-y: scroll;}
+  </style>
 </head>
 <body>
 <!-- メニュー表示 -->
@@ -24,49 +32,41 @@
     <!--Section: Modals-->
     <section>
       <h2 class="h1-responsive font-weight-bold text-center">新規連絡作成画面</h2>
-      <div class="border border-light px-5 py-2 mt-2 mb-4">
-
+      <div class="border border-light px-3 mt-2 mb-4">
         <form id="message-form" name="message-form" action="{{ url('messages') }}" method="POST">
-        {{ csrf_field() }}
+          {{ csrf_field() }}
           <div class="form-group">
             <div class="md-form mb-0">
               <textarea type="text" id="content" name="content" rows="2" class="form-control md-textarea"></textarea>
               <label for="content">一言</label>
             </div>
-            <div class="md-form mt-0">
-              <div class="border border-light rounded d-flex flex-wrap  justify-content-center mt-3 px-2 py-3">
-                  <button type="button" class="btn btn-outline-mdb-color waves-effect">quote1</button>
-                  <button type="button" class="btn btn-outline-mdb-color waves-effect">quote2</button>
-                  <button type="button" class="btn btn-outline-mdb-color waves-effect">quote3</button>
-                  <button type="button" class="btn btn-outline-mdb-color waves-effect">quote4</button>
-              </div>
-            </div>
             <input type="hidden" name="user_id" value="">
           </div>
           <!-- Sign in button -->
-          <button class="btn btn-info btn-block my-4" type="submit">Send</button>
+          <button class="btn btn-info btn-block my-4" name="send" type="submit">Send</button>
         </form>
-
-
+        <div class="md-form">
+          <div id="tmpBtn" class="border border-light rounded d-flex flex-column p-3">
+            @foreach ($templates as $template)
+            <div class="btn-group mb-4">
+              <button type="button" class="btn-tmp btn btn-outline-mdb-color waves-effect p-2 m-0">{{ $template->template }}</button>
+              <form action="{{ url('input/'.$template->id) }}" method="POST" class="h-100 my-0 mr-0 ml-3">
+                {{ csrf_field() }}
+                {{ method_field('DELETE') }}
+                <button type="submit" class="btn btn-danger h-100 p-3 m-0"> 削除</button>
+              </form>
+            </div>
+            @endforeach
+          </div>
+        </div>
         <form id="message-form2" name="message-form2" action="{{ url('templates') }}" method="POST">
-        <input type="hidden" name="template" value="test">
-        <button class="btn btn-info btn-block my-4" type="submit">定型文を送る</button>
-        </form>
-
-        
+          {{ csrf_field() }}
+          <input type="hidden" id="template" name="template" value="">
+          <button class="btn btn-info btn-block my-4" id=templateSend>定型文を登録</button>
+        </form>              
       </div>
     </section>
     <!--Section: Modals--> 
-
-    <div class="md-form mt-0">
-              <div class="border border-light rounded d-flex flex-wrap  justify-content-center mt-3 px-2 py-3">
-              @foreach ($templates as $template)
-                  <button type="button" class="btn btn-outline-mdb-color waves-effect">{{ $template->content }}</button>
-                  @endforeach
-              </div>
-            </div>
-
-
   </div>
 </main>
 <!--Main layout-->
@@ -80,6 +80,23 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
+
+<script>
+$("#templateSend").on("click",function(){
+  let text = $("#content").val();
+  console.log(text);
+  $("#template").val(text);
+  $("#message-form2").submit();
+})
+
+$(document).ready(function() {
+  $('#tmpBtn button').click(function(){
+    $('#content').append($(this).text());
+  });
+});
+</script>
+
+
 <!--Main javascript END-->
 
 </body>

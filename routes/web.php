@@ -4,6 +4,7 @@
 use App\Message;
 use App\Template;
 use Illuminate\Http\Request;
+use App\User;
 
 // 連絡一覧へ表示
 Route::get('/','TeamController@index');
@@ -14,9 +15,20 @@ Route::post('/messages','TeamController@store');
 // ログアウト
 Route::get('/logout','TeamController@getLogout');
 
+// スケジュールを表示
+Route::get('/schedule', function () {
+    return view('schedule');
+});
+
+// ユーザー一覧表示
+Route::get('/ichiran','TeamController@ichiran');
+
+// ユーザー削除
+Route::delete('/user/{user}','TeamController@destroy');
 
 
 // 今の所ここまで修正
+
 Route::get('/index', function () {
     $messages = Message::orderBy('created_at', 'asc')->get();
     return view('index', [
@@ -26,7 +38,7 @@ Route::get('/index', function () {
 });
 
 Route::get('/input', function () {
-    $templates = Template::orderBy('created_at', 'asc')->get();
+    $templates = Template::where('user_id',Auth::user()->id)->orderBy('created_at', 'asc')->get();
     return view('templates', [
         'templates' => $templates
     ]);
@@ -37,7 +49,7 @@ Route::get('/input', function () {
 
 
 
-Route::post('/input', function (Request $request) {
+Route::post('/templates', function (Request $request) {
     //
     //バリデーション
     $validator = Validator::make($request->all(), [
@@ -46,7 +58,7 @@ Route::post('/input', function (Request $request) {
 
     //バリデーション:エラー 
     if ($validator->fails()) {
-        return redirect('/')
+        return redirect('/input')
             ->withInput()
             ->withErrors($validator);
     }
@@ -54,10 +66,10 @@ Route::post('/input', function (Request $request) {
 // Eloquent モデル
 $templates = new Template;
 $templates->template = $request->template;
-$templates->user_id = '1';
+$templates->user_id = Auth::user()->id;
 $templates->published = '2017-03-07 00:00:00';
 $templates->save(); 
-return redirect('/');
+return redirect('/input');
 
 
 });
@@ -65,9 +77,9 @@ return redirect('/');
 /**
 * 本を削除 
 */
-Route::delete('/message/{message}', function (Message $message) {
-    //
-});
+Route::delete('/input/{template}', function (Template $template) {
+    $template->delete();
+    return redirect('/'); });
 
 
 Auth::routes();

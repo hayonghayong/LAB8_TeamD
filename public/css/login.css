@@ -6,6 +6,8 @@
 }
 html,body{
   height: 100%;
+  margin: 0;
+  padding: 0;
 }
 body ::-webkit-input-placeholder {
   color: white;
@@ -13,7 +15,7 @@ body ::-webkit-input-placeholder {
 .wrapper {
   background:linear-gradient(177.79740183823418deg, rgba(195, 229, 248,1) 49.44021968736798%,rgba(236, 236, 236,1) 76.48922686945501%);
   width: 100%;
-  height: 100%;;
+  min-height: 100%;
 }
 .wrapper.form-success .container h1 {
   transform: translateY(85px);
