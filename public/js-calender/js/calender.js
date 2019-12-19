@@ -2,14 +2,21 @@ var $window = $(window);
 var $year = $('#js-year');
 var $month = $('#js-month');
 var $tbody = $('#js-calendar-body');
+var $thead = $('#js-calendar-thead');
+var $form_date= $('#schedule-form #date');
+var $label_date= $('label[for="date"]');
 
 var today = new Date();
 var currentYear = today.getFullYear(),
-    currentMonth = today.getMonth();
+    currentMonth = today.getMonth(),
+    currentDate = today.getDate();
 
 $window.on('load',function(){
   calendarHeading(currentYear, currentMonth);
+  calendarThead();
   calendarBody(currentYear, currentMonth, today);
+  form_date_init(currentYear,currentMonth,currentDate);
+  datePicker();
 });
 
 function calendarBody(year, month, today){
@@ -32,9 +39,11 @@ function calendarBody(year, month, today){
       if (textDate > endDay) {
         textSkip = true;
       }
-      var addClass = todayYMFlag && textDate === today.getDate() ? 'is-today' : '';
+      var addClass = todayYMFlag && textDate === today.getDate() ? 'is-today day' : 'day';
       var textTd = textSkip ? '&nbsp;' : textDate++;
-      var td = '<td class="'+addClass+'">'+textTd+'</td>';
+      var td_day = '<td class="'+addClass+'"><span class="dayS">'+textTd+'</span></td>';
+      var td_null = '<td>&nbsp;</td>';
+      var td =  textSkip ? td_null : td_day;
       tr += td;
     }
     tr += '</tr>';
@@ -46,4 +55,20 @@ function calendarBody(year, month, today){
 function calendarHeading(year, month){
   $year.text(year);
   $month.text(month + 1);
+}
+
+function calendarThead(){
+  $thead.html('<tr><th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr>');
+}
+
+function datePicker(){
+  var $dayS = $('.dayS');
+  $dayS.on("click", function() {
+    form_date_init($year.text(),$month.text(),$(this).text());
+  })
+}
+
+function form_date_init(y,m,d){
+  $form_date.val(y+'-'+m+'-'+d);
+  $label_date.addClass('active')
 }

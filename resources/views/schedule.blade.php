@@ -27,25 +27,27 @@
   <div class="container">
     <!--Section: Modals-->
     <section>
-      <div class="d-flex justify-content-around align-items-start">
-        <div class="card card-comments m-3 wow text-center">
-          <div class="card-header font-weight-bold">
-            <h5 class="calendar-title"><span id="js-year"></span>年 <span id="js-month"></span>月</h5>
-            <table class="calendar-table">
-              <thead>
-                <tr><th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr>
-              </thead>
-              <tbody id="js-calendar-body"><tr><td class="">1</td><td class="">2</td><td class="">3</td><td class="">4</td><td class="">5</td><td class="">6</td><td class="">7</td></tr><tr><td class="">8</td><td class="">9</td><td class="">10</td><td class="">11</td><td class="">12</td><td class="">13</td><td class="">14</td></tr><tr><td class="">15</td><td class="is-today">16</td><td class="">17</td><td class="">18</td><td class="">19</td><td class="">20</td><td class="">21</td></tr><tr><td class="">22</td><td class="">23</td><td class="">24</td><td class="">25</td><td class="">26</td><td class="">27</td><td class="">28</td></tr><tr><td class="">29</td><td class="">30</td><td class="">31</td><td class="">&nbsp;</td><td class="">&nbsp;</td><td class="">&nbsp;</td><td class="">&nbsp;</td></tr><tr><td class="">&nbsp;</td><td class="">&nbsp;</td><td class="">&nbsp;</td><td class="">&nbsp;</td><td class="">&nbsp;</td><td class="">&nbsp;</td><td class="">&nbsp;</td></tr></tbody>
+      <div class="">
+        <div class="card card-comments mx-2 my-4 p-0 wow text-center">
+          <div class="card-header font-weight-bold p-0">
+            <h5 class="calendar-title"><span id="js-year"></span>年&nbsp;<span id="js-month"></span>月</h5>
+            <table id="js-calendar-table" class="calendar-table">
+              <thead id="js-calendar-thead"></thead>
+              <tbody id="js-calendar-body"></tbody>
             </table>
           </div>
           <div class="card-body">
             <form id="schedule-form" name="schedule-form" action="schedule.php" method="POST">
               <div class="form-group">
                 <div class="md-form mb-0">
-                  <textarea type="text" id="content" name="content" rows="2" class="form-control md-textarea"></textarea>
-                  <label for="content">一言</label>
+                  <input type="date" id="date" name="date" class="form-control md-text p-0"></input>
+                  <label for="date mb-0">日付</label>
                 </div>
-                <div class="md-form mt-0">
+                <div class="md-form mb-0">
+                  <textarea type="text" id="content" name="content" rows="2" class="form-control md-textarea pb-0"></textarea>
+                  <label for="content">予定</label>
+                </div>
+                <div class="md-form mb-0">
                   <select class="browser-default custom-select">
                     <option selected>Open this select menu</option>
                     <option value="1">One</option>
