@@ -18,7 +18,7 @@ if (Auth::check())
       <li class="navi"><a href="schedule">スケジュール</a></li>
       <li class="navi"><a href="ichiran">ユーザー一覧</a></li>
       <li class="navi"><a href="contact">お問い合わせ</a></li>
-      <li class="navi"><a href="/logout">ログアウト</a></li>
+      <li class="navi"><a href="logout">ログアウト</a></li>
     </ul>
   </nav>
 </header>
