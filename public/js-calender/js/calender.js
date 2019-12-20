@@ -43,7 +43,7 @@ function calendarBody(year, month, today){
       }
       var addClass = todayYMFlag && textDate === today.getDate() ? 'is-today day' : 'day';
       var textTd = textSkip ? '&nbsp;' : textDate++;
-      var td_day = '<td class="'+addClass+'"><span class="dayS">'+textTd+'</span></td>';
+      var td_day = '<td class="'+addClass+'"><span class="dayS" ontouchstart="" >'+textTd+'</span></td>';
       var td_null = '<td>&nbsp;</td>';
       var td =  textSkip ? td_null : td_day;
       tr += td;
@@ -78,6 +78,7 @@ function form_date_init(y,m,d){
 }
 
 function date_val(y,m,d){
+  if(d<10){d='0'+d;};
   return y+'-'+m+'-'+d;
 }
 

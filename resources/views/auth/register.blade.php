@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<link rel="stylesheet" href="../../../css/new_user.css">
+<link rel="stylesheet" href="css/new_user.css">
 </head>
 <body>
 <div id="formWrapper">
@@ -78,7 +78,7 @@
             </div>
         </form>
     </div>
-<script src="../../../js/jquery-2.1.3.min.js"></script>
+<script src="js/jquery-2.1.3.min.js"></script>
 <script>
 $(document).ready(function (){
     var formInputs = $('input[type="text"],input[type="email"],input[type="password"]');

@@ -34,8 +34,7 @@ Route::post('/schedule','ScheduleController@store');
 Route::get('/schedule','ScheduleController@index');
 
 // 予定削除
-Route::delete('/schedules/{schedules}', 
-'ScheduleController@destroy');
+Route::delete('/schedules/{schedules}','ScheduleController@destroy');
 
 // 今の所ここまで修正
 

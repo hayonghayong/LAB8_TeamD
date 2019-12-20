@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<link rel="stylesheet" href="../../../css/login.css">
+<link rel="stylesheet" href="css/login.css">
 </head>
 <body>
 <div class="wrapper">
@@ -45,7 +45,7 @@
 </div>
 </div>
 <!-- JS -->
-<script src="../../../js/jquery-2.1.3.min.js"></script>
+<script src="js/jquery-2.1.3.min.js"></script>
 <script>
 $("#login-button").click(function(event){
 event.preventDefault();

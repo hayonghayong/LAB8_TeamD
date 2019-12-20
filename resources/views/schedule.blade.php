@@ -55,7 +55,7 @@
       <thead> <th>予定表示</th>
       <!-- テーブル本体 -->
       <tbody>
-      @if (isset($schedules))
+      @if (count($schedules) > 0)
         @foreach ($schedules as $schedules)
         <tr class="date_{{ $schedules->date }}">
           <td class="table-text">

@@ -115,8 +115,11 @@ transform: scale(1.2, 1.2);
     height: auto;
     padding-bottom: .5rem;
   }
-  p{
+  header p{
     margin-bottom: 0;
+  }
+  main{
+    padding-bottom: 12vh;
   }
 }
 navBottom ul{
@@ -138,7 +141,7 @@ display: table-cell;
 border-right: 1px solid #ccc;
 border-top: 1px solid #ccc;
 padding: 8px;
-width: 25vw;
+width: 16vh;
 }
 navBottom ul li:last-child{
   border-right:none;
