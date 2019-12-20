@@ -21,7 +21,7 @@
 <script>
 $(window).on('load', function(){
     setTimeout(function(){
-    location.href = "index";
+    location.href = "/index";
     }, 2000);
 });
 </script>

@@ -38,21 +38,9 @@ Route::delete('/schedules/{schedules}','ScheduleController@destroy');
 
 // 今の所ここまで修正
 
-Route::get('/index', function () {
-    $messages = Message::orderBy('created_at', 'asc')->get();
-    return view('index', [
-        'messages' => $messages
-    ]);
-    //return view('books',compact('books')); //も同じ意味
-});
+Route::get('/index', 'TeamController@index');
 
-Route::get('/input', function () {
-    $templates = Template::where('user_id',Auth::user()->id)->orderBy('created_at', 'asc')->get();
-    return view('templates', [
-        'templates' => $templates
-    ]);
-    //return view('books',compact('books')); //も同じ意味
-});
+Route::get('/input','TeamController@input');
 
 
 
