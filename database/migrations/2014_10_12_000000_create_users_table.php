@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('shisetuName');
             $table->string('shisetuID');
+            $table->integer('kanri');
             $table->rememberToken();
             $table->timestamps();
         });
