@@ -54,9 +54,11 @@
 <!--Main javascript-->
 <!-- JQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <!-- JQuery Mobile-->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.0.3.min.js"></script> -->
+<!-- <script type="text/javascript" src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
 <!-- Bootstrap core JavaScript -->
@@ -79,12 +81,12 @@ $(document).ready(function() {
 });
 
 
-$(function(){
-  $('#test').on( 'swipe', mySwipeHandler );
-  function mySwipeHandler( evt ){
-    location.href = "{{ url('index') }}";
-  }
-});
+// $(function(){
+//   $('#test').on( 'swipe', mySwipeHandler );
+//   function mySwipeHandler( evt ){
+//     location.href = "{{ url('index') }}";
+//   }
+// });
 
 </script>
 <!--Main javascript END-->
