@@ -20,6 +20,7 @@
           <td class="table-text">
             <div> {{$users->name }} </div> 
           </td>
+          @if(Auth::user()->kanri ==1)
           <!-- 本: 削除ボタン -->
           <td>
             <form action="{{ url('users/'.$users->id) }}" method="POST"> {{ csrf_field() }}
@@ -27,6 +28,7 @@
               <button type="submit" class="btn btn-danger"> 削除</button>
             </form>
           </td> 
+          @endif
         </tr>
       @endforeach
       </tbody> 
