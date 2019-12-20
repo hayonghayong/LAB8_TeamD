@@ -48,16 +48,16 @@
     </section>
     <!--Section: Modals--> 
   </div>
-  @if (count($schedules) > 0)
   <!-- 予定表示 -->
   <div class="card-body">
-    <table class="table table-striped task-table">
+    <table id="schedule_table" class="table table-striped task-table">
       <!-- テーブルヘッダ -->
       <thead> <th>予定表示</th>
       <!-- テーブル本体 -->
       <tbody>
-      @foreach ($schedules as $schedules)
-        <tr>
+      @if (isset($schedules))
+        @foreach ($schedules as $schedules)
+        <tr class="date_{{ $schedules->date }}">
           <td class="table-text">
             <div> {{ $schedules->date }} </div>
           </td>
@@ -75,11 +75,17 @@
             </form>
           </td> 
         </tr>
-      @endforeach
+        @endforeach
+      @else
+        <tr class="date_none">
+          <td class="table-text">
+            <div> 予定はありません </div>
+          </td>
+        </tr>
+      @endif
       </tbody>
     </table>
   </div>
-  @endif
 </main>
 <!--Main layout-->
 

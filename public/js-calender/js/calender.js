@@ -6,6 +6,8 @@ var $thead = $('#js-calendar-thead');
 var $form_date= $('#schedule-form #date');
 var $label_date= $('label[for="date"]');
 
+var table_schedule_tr= '#schedule_table tbody tr';
+
 var today = new Date();
 var currentYear = today.getFullYear(),
     currentMonth = today.getMonth(),
@@ -15,7 +17,7 @@ $window.on('load',function(){
   calendarHeading(currentYear, currentMonth);
   calendarThead();
   calendarBody(currentYear, currentMonth, today);
-  form_date_init(currentYear,currentMonth,currentDate);
+  form_date_init(currentYear,currentMonth + 1,currentDate);
   datePicker();
 });
 
@@ -59,6 +61,7 @@ function calendarHeading(year, month){
 
 function calendarThead(){
   $thead.html('<tr><th>日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th></tr>');
+
 }
 
 function datePicker(){
@@ -69,6 +72,17 @@ function datePicker(){
 }
 
 function form_date_init(y,m,d){
-  $form_date.val(y+'-'+m+'-'+d);
-  $label_date.addClass('active')
+  var date = date_val(y,m,d);
+  $form_date.val(date);
+  $label_date.addClass('active');
+}
+
+function date_val(y,m,d){
+  return y+'-'+m+'-'+d;
+}
+
+function schedule_display(date){
+  $(table_schedule_tr).css('display', 'none');
+  var tag=table_schedule_tr+'.date_'+date;
+  $(tag).css('display', 'block');
 }
