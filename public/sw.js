@@ -8,19 +8,19 @@ const
   //必ずキャッシュ...
   urlsToCache = [
     './manifest.json',
-    './index.html',
-    './css/index.css',
-    './css/main.css',
-    './img/img_1.gif',
-    './img/img_2.gif',
-    './img/img_3.gif',
+    // './index.html',
+    // './css/index.css',
+    // './css/main.css',
+    // './img/img_1.gif',
+    // './img/img_2.gif',
+    // './img/img_3.gif',
   ].concat(offlineURL),
   //できれば・・・キャッシュ
   urlsToCache2 = [
-    './img/gorira.gif',
-    './img/gorira.png',
-    './img/cat.gif',
-    './img/cat.png',
+    // './img/gorira.gif',
+    // './img/gorira.png',
+    // './img/cat.gif',
+    // './img/cat.png',
   ];
 
 //************************************************
