@@ -8,6 +8,9 @@ const
   //必ずキャッシュ...
   urlsToCache = [
     './manifest.json',
+    './js/jquery-2.1.3.min.js',
+    './js/app.js',
+    './js/getTrend.js',
     // './index.html',
     // './css/index.css',
     // './css/main.css',
