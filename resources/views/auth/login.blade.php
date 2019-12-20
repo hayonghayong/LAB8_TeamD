@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <link rel="stylesheet" href="../../../css/login.css">
+</head>
+<body>
 <div class="wrapper">
 <div class="container">
     <h1 class="panel-heading">連絡アプリへようこそ</h1>
@@ -56,4 +58,5 @@ $("#send").submit();
 
 });
 </script>
+<body>
 @endsection

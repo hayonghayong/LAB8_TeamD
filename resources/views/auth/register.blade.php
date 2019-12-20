@@ -1,6 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <link rel="stylesheet" href="../../../css/new_user.css">
+</head>
+<body>
 <div id="formWrapper">
     <div id="form">
         <h1>新規登録</h1>
@@ -91,5 +93,6 @@ $(document).ready(function (){
     });
 });
 </script>
+</body>
 
 @endsection

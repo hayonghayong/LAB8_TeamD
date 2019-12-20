@@ -1,31 +1,8 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>連絡帳アプリ</title>
-  <!--Main CSS-->
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet"> 
-  <!--Main CSS END-->
-
-  <!--Menu CSS-->
-  <link rel="stylesheet" href="/css/menu.css">
-  <!--Menu CSS END-->
-
+@extends('layouts.app')
+@section('content')
   <style>
-   #tmpBtn{ max-height:12rem; overflow-y: scroll;}
+   #tmpBtn{ max-height:160px; overflow-y: scroll;}
   </style>
-</head>
-<body>
-<!-- メニュー表示 -->
-@include('menu')
-
 <!--Main layout-->
 <main>
   <div class="container">
@@ -46,14 +23,14 @@
           <button class="btn btn-info btn-block my-4" name="send" type="submit">Send</button>
         </form>
         <div class="md-form">
-          <div id="tmpBtn" class="border border-light rounded d-flex flex-column p-3">
+          <div id="tmpBtn" class="border border-light rounded d-flex flex-column p-2">
             @foreach ($templates as $template)
-            <div class="btn-group mb-4">
-              <button type="button" class="btn-tmp btn btn-outline-mdb-color waves-effect p-2 m-0">{{ $template->template }}</button>
-              <form action="{{ url('input/'.$template->id) }}" method="POST" class="h-100 my-0 mr-0 ml-3">
+            <div class="btn-group mb-2">
+              <button type="button" class="btn-tmp btn btn-outline-mdb-color waves-effect px-2 py-3">{{ $template->template }}</button>
+              <form action="{{ url('input/'.$template->id) }}" method="POST" class="h-100">
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
-                <button type="submit" class="btn btn-danger h-100 p-3 m-0"> 削除</button>
+                <button type="submit" class="btn btn-danger h-100 p-3 m-2"> 削除</button>
               </form>
             </div>
             @endforeach
@@ -95,9 +72,5 @@ $(document).ready(function() {
   });
 });
 </script>
-
-
 <!--Main javascript END-->
-
-</body>
-</html>
+@endsection
