@@ -3,6 +3,9 @@
   <style>
    #tmpBtn{ max-height:160px; overflow-y: scroll;}
   </style>
+</head>
+<body>
+@include('menu')
 <!--Main layout-->
 <main>
   <div class="container">
@@ -73,4 +76,5 @@ $(document).ready(function() {
 });
 </script>
 <!--Main javascript END-->
+</body>
 @endsection
