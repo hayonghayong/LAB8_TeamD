@@ -16,53 +16,53 @@
           <aside class="ranklet ranklet-reset">
             <div class="ranklet-wrapper">
               <div class="ranklet-item">
-                <a href="#" class="ranklet-link">
-                  <p class="ranklet-title">Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
+                <a href="https://www.sankei.com/life/news/191217/lif1912170043-n1.html" class="ranklet-link">
+                  <p class="ranklet-title">診療報酬０・４６％下げ、医療費５００億円削減 閣僚折衝で合意</p>
+                  </a>
+              </div>
+              <div class="ranklet-item">
+                <a href="https://news.yahoo.co.jp/byline/atsushiotsuka/20191201-00153220/" class="ranklet-link">
+                  <p class="ranklet-title">お医者さんと話が通じない？医療におけるコミュニケーション・エラーの原因と対策 前半</p>
                 <!-- /.ranklet-link --></a>
               </div>
               <div class="ranklet-item">
-                <a href="#" class="ranklet-link">
-                  <p class="ranklet-title">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                <a href="https://www.niikei.jp/26396/" class="ranklet-link">
+                  <p class="ranklet-title">新潟県立新発田病院で医療事故。精密検査が実施されず</p>
                 <!-- /.ranklet-link --></a>
               </div>
               <div class="ranklet-item">
-                <a href="#" class="ranklet-link">
-                  <p class="ranklet-title">Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.</p>
+                <a href="https://news.yahoo.co.jp/byline/otsushuichi/20191211-00154522/" class="ranklet-link">
+                  <p class="ranklet-title">「モルヒネ過剰で女性患者が死亡　大阪の病院が投与ミスか」という報道　医療用麻薬の専門家の立場から</p>
                 <!-- /.ranklet-link --></a>
               </div>
               <div class="ranklet-item">
-                <a href="#" class="ranklet-link">
-                  <p class="ranklet-title">Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.</p>
+                <a href="https://mainichi.jp/articles/20191015/k00/00m/040/288000c" class="ranklet-link">
+                  <p class="ranklet-title">名大病院が医療ミス認め陳謝　肺がん診断13カ月放置、50代女性死亡</p>
                 <!-- /.ranklet-link --></a>
               </div>
               <div class="ranklet-item">
-                <a href="#" class="ranklet-link">
-                  <p class="ranklet-title">In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
+                <a href="https://www.jiji.com/jc/article?k=2019102301165&g=soc" class="ranklet-link">
+                  <p class="ranklet-title">市立病院で医療ミス＝患者女性死亡－名古屋</p>
                 <!-- /.ranklet-link --></a>
               </div>
               <div class="ranklet-item">
-                <a href="#" class="ranklet-link">
-                  <p class="ranklet-title">Nullam dictum felis eu pede mollis pretium. Integer tincidunt.</p>
+                <a href="https://www.ehime-np.co.jp/article/news201912140315" class="ranklet-link">
+                  <p class="ranklet-title">松山で助産師ら研修会 産後ケア、地域連携必要</p>
                 <!-- /.ranklet-link --></a>
               </div>
               <div class="ranklet-item">
-                <a href="#" class="ranklet-link">
-                  <p class="ranklet-title">Vivamus elementum semper nisi. Aenean vulputate eleifend tellus.</p>
+                <a href="https://www.55mfmfmf55.com/riskscore/" class="ranklet-link">
+                  <p class="ranklet-title">プログラミング で使ったもの 妊婦リスクスコア</p>
                 <!-- /.ranklet-link --></a>
               </div>
               <div class="ranklet-item">
-                <a href="#" class="ranklet-link">
-                  <p class="ranklet-title">Aenean leo ligula, consequat vitae, eleifend ac, enim.</p>
+                <a href="https://www.55mfmfmf55.com/image-of-ns/" class="ranklet-link">
+                  <p class="ranklet-title">世間 が抱く 看護師 の イメージ</p>
                 <!-- /.ranklet-link --></a>
               </div>
               <div class="ranklet-item">
-                <a href="#" class="ranklet-link">
-                  <p class="ranklet-title">Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.</p>
-                <!-- /.ranklet-link --></a>
-              </div>
-              <div class="ranklet-item">
-                <a href="#" class="ranklet-link">
-                  <p class="ranklet-title">Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum.</p>
+                <a href="https://www.47news.jp/4262540.html" class="ranklet-link">
+                  <p class="ranklet-title">医療事故防ぐ基本 再確認　職員考案のかるたで学ぶ　燿光リハビリテーション病院 「気をつけて、思い込みからリスクある」</p>
                 <!-- /.ranklet-link --></a>
               </div>
             </div>
