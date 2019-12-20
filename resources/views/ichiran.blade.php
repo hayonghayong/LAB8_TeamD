@@ -20,7 +20,7 @@
           <td class="table-text">
             <div> {{$users->name }} </div> 
           </td>
-          @if(Auth::user()->id ==1)
+          @if(Auth::user()->kanri ==1)
           <!-- 本: 削除ボタン -->
           <td>
             <form action="{{ url('users/'.$users->id) }}" method="POST"> {{ csrf_field() }}
