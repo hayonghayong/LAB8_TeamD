@@ -4,6 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- PWA -->
+<!--https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/?hl=ja-->
+<meta name="theme-color" content="#F8F7F8">
+<link rel="manifest" href="manifest.json">
+<script>
+if('serviceWorker' in navigator){
+    navigator.serviceWorker.register('sw.js');
+}
+</script>
+<!-- PWA -->
   <title>連絡帳アプリ</title>
 <?php
 if (Auth::check())
