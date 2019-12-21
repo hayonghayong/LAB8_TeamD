@@ -1,69 +1,52 @@
 <?php
-
-
 use App\Message;
 use App\Template;
 use Illuminate\Http\Request;
+use App\User;
+use App\Schedule;
 
-/**
-* 本のダッシュボード表示(books.blade.php)
-*/
-Route::get('/', function () {
-    $messages = Message::orderBy('created_at', 'asc')->get();
-    return view('index', [
-        'messages' => $messages
-    ]);
-    //return view('books',compact('books')); //も同じ意味
+// 連絡一覧へ表示
+Route::get('/','TeamController@index');
+
+// 新規連絡登録
+Route::post('/messages','TeamController@store'); 
+// ログアウト
+Route::get('/logout','TeamController@getLogout');
+
+// ユーザー一覧表示
+Route::get('/ichiran','TeamController@ichiran');
+
+// ユーザー削除
+Route::delete('/user/{user}','TeamController@destroy');
+
+// コンタクト画面表示
+Route::get('/contact', function () {
+return view('contact');
 });
 
-Route::get('/index', function () {
-    $messages = Message::orderBy('created_at', 'asc')->get();
-    return view('index', [
-        'messages' => $messages
-    ]);
-    //return view('books',compact('books')); //も同じ意味
-});
+// メール送信機能
+// Route::get('/mail', 'MailSendController');
 
-Route::get('/input', function () {
-    $templates = Template::orderBy('created_at', 'asc')->get();
-    return view('templates', [
-        'templates' => $templates
-    ]);
-    //return view('books',compact('books')); //も同じ意味
-});
+// カレンダーに予定追加
+Route::post('/schedule','ScheduleController@store');
 
+// カレンダーに予定表示
+Route::get('/schedule','ScheduleController@index');
 
-/**
-* 新「本」を追加 
-*/
-Route::post('/messages', function (Request $request) {
-    //
-    //バリデーション
-    $validator = Validator::make($request->all(), [
-        'content' => 'required|max:255',
-    ]);
+// 予定削除
+Route::delete('/schedules/{schedules}','ScheduleController@destroy');
 
-    //バリデーション:エラー 
-    if ($validator->fails()) {
-        return redirect('/')
-            ->withInput()
-            ->withErrors($validator);
-    }
-    //以下に登録処理を記述（Eloquentモデル）
-// Eloquent モデル
-$messages = new Message;
-$messages->content = $request->content;
-$messages->user_id = '1';
-$messages->published = '2017-03-07 00:00:00';
-$messages->save(); 
-return redirect('/');
+// 今の所ここまで修正
 
+Route::get('/index', 'TeamController@index');
 
-});
+Route::get('/input','TeamController@input');
 
 
 
-Route::post('/input', function (Request $request) {
+
+
+Route::post('/templates', function (Request $request) {
     //
     //バリデーション
     $validator = Validator::make($request->all(), [
@@ -72,7 +55,7 @@ Route::post('/input', function (Request $request) {
 
     //バリデーション:エラー 
     if ($validator->fails()) {
-        return redirect('/')
+        return redirect('/input')
             ->withInput()
             ->withErrors($validator);
     }
@@ -80,10 +63,10 @@ Route::post('/input', function (Request $request) {
 // Eloquent モデル
 $templates = new Template;
 $templates->template = $request->template;
-$templates->user_id = '1';
+$templates->user_id = Auth::user()->id;
 $templates->published = '2017-03-07 00:00:00';
 $templates->save(); 
-return redirect('/');
+return redirect('/input');
 
 
 });
@@ -91,6 +74,11 @@ return redirect('/');
 /**
 * 本を削除 
 */
-Route::delete('/message/{message}', function (Message $message) {
-    //
-});
+Route::delete('/input/{template}', function (Template $template) {
+    $template->delete();
+    return redirect('/'); });
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

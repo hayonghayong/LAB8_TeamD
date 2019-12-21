@@ -1,0 +1,35 @@
+.calendar-title {
+  text-align: center;
+  margin: .5rem 0;
+}
+.calendar-table {
+  width: 96%;
+  margin: 0 auto;
+}
+.calendar-table .is-today{
+  background-color: #e8cad0;
+  color: red;
+}
+.calendar-table td {
+  width: 14%;
+  height: 2rem;
+  line-height: 2rem;
+  text-align: center;
+}
+.calendar-table .dayS{
+    display: inline-block;
+    width: 2rem;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+.calendar-table .dayS:hover{
+  background-color: rgba(46, 179, 242, 0.5);
+}
+.calendar-table th,
+.calendar-table td {
+  font-size: 1.25rem;
+}
+input[type=date]::-webkit-calendar-picker-indicator {
+  display: none;
+}

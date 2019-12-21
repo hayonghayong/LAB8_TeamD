@@ -1,27 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>連絡帳アプリ</title>
-  <!--Main CSS-->
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet"> 
-  <!--Main CSS END-->
+@extends('layouts.app')
+@section('content')
 </head>
 <body>
-<ul>
-  <li><a href="index.html">Top</a></li>
-  <li><a href="input.html">Input</a></li>
-  <li><a href="shcedule.html">Schedule</a></li>
-  <li><a href="contact.html">Contact</a></li>
-</ul>
-
+@include('menu')
 <!--Main layout-->
 <main>
   <div class="container">
@@ -34,16 +15,16 @@
           <div class="form-group">
             <div class="md-form mb-0">
               <input type="text" id="subject" name="subject" class="form-control">
-              <label for="subject" class="">Subject</label>
+              <label for="subject" class="">題名</label>
             </div>
             <div class="md-form">
               <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-              <label for="message">Your message</label>
+              <label for="message">お問い合わせ内容</label>
             </div>
             <input type="hidden" name="user_id" value="">
           </div>
           <!-- Sign in button -->
-          <button class="btn btn-info btn-block my-4" type="submit">Send</button>
+          <button class="btn btn-info btn-block my-4" type="submit">送信</button>
         </form>
       </div>
     </section>
@@ -62,6 +43,5 @@
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
 <!--Main javascript END-->
-
 </body>
-</html>
+@endsection

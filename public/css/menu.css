@@ -1,12 +1,15 @@
+/*
 body{
   height: 2000px;
 }
+*/
 /* ヘッダー */
 header{
   height: 155px;
   background: linear-gradient(45deg,lemonchiffon, #ffa36c,#6cb8ff);
   background-size: 600% 600%;
   animation: AnimationName 20s ease infinite;
+  margin-bottom: .5rem;
 }
 @keyframes AnimationName { 
     0%{background-position:0% 50%}
@@ -62,7 +65,7 @@ p{
 }
 /* トップメニュー */
 nav{
-height: 100px;
+height: auto;
 }
 @media screen and (max-width:480px){
   nav {
@@ -73,7 +76,7 @@ nav ul{
 display: table;
 margin: 0 auto;
 padding: 0;
-width: 100%;
+width: 92%;
 text-align: center;
 font-size: 15px;
 }
@@ -81,9 +84,7 @@ nav ul li{
 display: table-cell;
 min-width: 50px;
 height:10%;
-/* border-right: 1px solid #ccc;
-border-top: 1px solid #ccc;
-border-bottom: 1px solid #ccc; */
+width: 16vh;
 }
 nav ul li:last-child{
   border-right:none;
@@ -106,8 +107,20 @@ transform: scale(1.2, 1.2);
 /* ボトムメニュー */
 @media screen and (min-width:480px){
   navBottom {
-  display:none;
+    display:none;
+  }
 }
+@media screen and (max-width:481px){
+  header {
+    height: auto;
+    padding-bottom: .5rem;
+  }
+  header p{
+    margin-bottom: 0;
+  }
+  main{
+    padding-bottom: 12vh;
+  }
 }
 navBottom ul{
 position: fixed;
@@ -120,12 +133,15 @@ width: 100%;
 height: 8%;
 text-align: center;
 font-size: 13px;
+z-index: 999;
+background: #fff;
 }
 navBottom ul li{
 display: table-cell;
 border-right: 1px solid #ccc;
 border-top: 1px solid #ccc;
-padding-top: 20px;
+padding: 8px;
+width: 16vh;
 }
 navBottom ul li:last-child{
   border-right:none;
