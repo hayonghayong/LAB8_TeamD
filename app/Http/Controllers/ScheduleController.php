@@ -7,6 +7,10 @@ use App\Schedule;
 
 class ScheduleController extends Controller
 {
+  public function __construct(){
+    $this->middleware('auth');
+  }
+  
   // 予定追加
   public function store(Request $request) {
     $schedules = new Schedule;

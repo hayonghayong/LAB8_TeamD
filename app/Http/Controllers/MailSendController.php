@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 
 class MailSendController extends Controller
 {
+    public function contact() {
+        return view('contact');
+    }
     public function send(){
         $data = [];
         Mail::send('contact', $data, function($message){

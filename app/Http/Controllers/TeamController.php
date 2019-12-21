@@ -3,22 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Message;
-use App\Template;
-use App\User;
 use Validator; 
 use Auth;
-use Carbon\Carbon; 
+use Carbon\Carbon;
+use App\Message; 
 
 class TeamController extends Controller
 {
 // ログインした人しか見れない！
-public function __construct()
-{$this->middleware('auth'); }
+public function __construct(){
+  $this->middleware('auth');
+}
+
+// 連絡一覧へ表示
+public function home() {
+  return redirect('login');
+}
 
 // 連絡一覧へ表示
 public function index() {
-  //$messages = Message::orderBy('published', 'desc')->get();
   // INNAR JOIN
   $messages = \DB::table('messages')
   ->select(
@@ -30,17 +33,12 @@ public function index() {
     'messages.created_at as created_at',
     'messages.updated_at as updated_at')
   ->join('users','messages.user_id','=','users.id')
+  ->where('users.shisetuID', '=', Auth::user()->shisetuID)
   ->orderBy('messages.published', 'desc')
   ->get();
   return view('index', ['messages' => $messages]);
 }
 
-function input() {
-  $templates = Template::where('user_id',Auth::user()->id)->orderBy('created_at', 'asc')->get();
-  return view('templates', [
-      'templates' => $templates
-  ]);
-}
 //新規連絡登録
 public function store(Request $request) {
   //バリデーション
@@ -49,7 +47,7 @@ public function store(Request $request) {
   ]);
   //バリデーション:エラー 
   if ($validator->fails()) {
-    return redirect('/')
+    return redirect('index')
       ->withInput()
       ->withErrors($validator);
   }
@@ -61,25 +59,13 @@ public function store(Request $request) {
   $dt = Carbon::now();
   $messages->published = $dt;
   $messages->save(); 
-  return redirect('/');
+  return redirect('index');
 }
 
 // ログアウト
  public function getLogout(){
   Auth::logout();
-  return redirect('/');
-}
-
-// ユーザー一覧表示
-public function ichiran() {
-  $users = User::orderBy('created_at', 'asc')->get();
-  return view('ichiran', ['users' => $users ]);
-}
-
-// ユーザー削除
-public function destroy(Usder $user) {
-  $user->delete();
-  return redirect('ichiran');
+  return redirect('login');
 }
 
 

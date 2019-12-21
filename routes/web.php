@@ -1,84 +1,48 @@
 <?php
-use App\Message;
-use App\Template;
 use Illuminate\Http\Request;
-use App\User;
-use App\Schedule;
 
 // 連絡一覧へ表示
-Route::get('/','TeamController@index');
+Route::get('/','TeamController@home');
 
 // 新規連絡登録
-Route::post('/messages','TeamController@store'); 
+Route::post('/messages','TeamController@store');
+
 // ログアウト
 Route::get('/logout','TeamController@getLogout');
 
 // ユーザー一覧表示
-Route::get('/ichiran','TeamController@ichiran');
+Route::get('/ichiran','UserTableController@ichiran');
 
 // ユーザー削除
-Route::delete('/user/{user}','TeamController@destroy');
+Route::delete('/user/{user}','UserTableController@destroy');
 
 // コンタクト画面表示
-Route::get('/contact', function () {
-return view('contact');
-});
+Route::get('/contact','MailSendController@contact');
 
 // メール送信機能
-// Route::get('/mail', 'MailSendController');
+// Route::get('/mail', 'MailSendController@send');
+
+// スケジュール画面表示
+Route::get('/schedule','ScheduleController@index');
 
 // カレンダーに予定追加
 Route::post('/schedule','ScheduleController@store');
 
-// カレンダーに予定表示
-Route::get('/schedule','ScheduleController@index');
-
 // 予定削除
 Route::delete('/schedules/{schedules}','ScheduleController@destroy');
 
-// 今の所ここまで修正
-
+// 連絡一覧画面表示
 Route::get('/index', 'TeamController@index');
 
-Route::get('/input','TeamController@input');
+// 新規登録画面表示
+Route::get('/input','TemplateController@index');
 
+// 定型文登録
+Route::post('/templates', 'TemplateController@store');
 
-
-
-
-Route::post('/templates', function (Request $request) {
-    //
-    //バリデーション
-    $validator = Validator::make($request->all(), [
-        'template' => 'required|max:255',
-    ]);
-
-    //バリデーション:エラー 
-    if ($validator->fails()) {
-        return redirect('/input')
-            ->withInput()
-            ->withErrors($validator);
-    }
-    //以下に登録処理を記述（Eloquentモデル）
-// Eloquent モデル
-$templates = new Template;
-$templates->template = $request->template;
-$templates->user_id = Auth::user()->id;
-$templates->published = '2017-03-07 00:00:00';
-$templates->save(); 
-return redirect('/input');
-
-
-});
-
-/**
-* 本を削除 
-*/
-Route::delete('/input/{template}', function (Template $template) {
-    $template->delete();
-    return redirect('/'); });
-
+// 定型文削除
+Route::delete('/input/{template}','TemplateController@destroy');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'TeamController@index')->name('home');
