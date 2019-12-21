@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Http\Request;
+use App\Kidoku;
 
 // 連絡一覧へ表示
 Route::get('/','TeamController@home');
@@ -42,6 +43,29 @@ Route::post('/templates', 'TemplateController@store');
 
 // 定型文削除
 Route::delete('/input/{template}','TemplateController@destroy');
+
+
+// 未読を既読に変える
+Route::get('/kidoku/{message}',function(Request $request,$message) {
+    //バリデーション
+    $validator = Validator::make($request->all(), [
+    //   'user_id' => 'required|max:255',
+    //   'message_id' => 'required|max:255',
+    ]);
+    //バリデーション:エラー 
+    if ($validator->fails()) {
+      return redirect('index')
+        ->withInput()
+        ->withErrors($validator);
+    }
+    // Eloquent モデル
+    $kidokus = new Kidoku;
+    $kidokus->user_id = Auth::user()->id;
+    $kidokus->message_id = $message;
+    $kidokus->save(); 
+    return redirect('index');
+  });
+
 
 Auth::routes();
 

@@ -78,9 +78,29 @@
         <div class="card card-comments my-4 wow fadeIn">
           <div class="card-header font-weight-bold">
             <h5 class="mt-0 font-weight-bold">{{ $message->user_name }}
+            @php
+            $num = 0;
+            @endphp
+            @foreach ($kidokus as $kidoku)
+            @if($message->id === $kidoku->message_id)
+            @php
+            $num += 1;
+            @endphp
+              @endif
+              @endforeach
+              @if($num >= 1)
               <a href="" class="pull-right">
-                <i class="fas fa-check-square"></i>
+                <i id = "$kidoku->message_id" class="fas fa-check-square"></i>
               </a>
+              @elseif($num == 0)
+              <a href="{{ url(('kidoku/'.$message->id)) }}" class="pull-right">
+                <i class="far fa-check-square"></i>
+              </a>
+              @endif
+
+              <a class = "float-right" style="font-size:0.8rem">{{ $message->created_at }}に投稿されました</a>
+              <br>
+              <a class = "float-right" style="font-size:0.8rem">{{ $num }}人既読</a>
             </h5>
           </div>
           <div class="card-body">
@@ -112,15 +132,5 @@
 <!-- newsticker JavaScript -->
 <script src="js/getTrend.js"></script>
 <!-- newsticker JavaScript END-->
-
-<!-- <script>
-$(function(){
-  $('#test').on( 'swipe', mySwipeHandler );
-  function mySwipeHandler( evt ){
-    location.href = "{{ url('input') }}";
-  }
-});
-</!--> -->
-
 </body>
 @endsection
