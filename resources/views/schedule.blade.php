@@ -29,14 +29,6 @@
                   <textarea type="text" id="content" name="content" rows="2" class="form-control md-textarea pb-0"></textarea>
                   <label for="content">予定</label>
                 </div>
-                <div class="md-form mb-0">
-                  <select class="browser-default custom-select">
-                    <option selected>Open this select menu</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                  </select>
-                </div>
                 <input type="hidden" name="user_id" value="">
               </div>
               <!-- Sign in button -->
