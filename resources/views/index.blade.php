@@ -72,7 +72,7 @@
     </section>
     <!--Section: Modals-->
     <section>
-      <h2 class="h1-responsive font-weight-bold text-center">二言一覧</h2>
+      <h2 class="h1-responsive font-weight-bold text-center">一言一覧</h2>
       <div class="border border-light px-5 py-2 mt-2 mb-4">
         @foreach ($messages as $message)
         <div class="card card-comments my-4 wow fadeIn">
