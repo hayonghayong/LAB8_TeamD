@@ -32,7 +32,7 @@
             </div>
             <div class="form-item">
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                    <label for="password" class="col-md-4 control-label form-style">パスワード</label>
+                    <label for="password" class="col-md-4 control-label form-style">パスワード<span class="placeholder">(半角6文字以上)</span></label>
                     <input id="password" type="password" class="form-style" name="password" required>
                     @if ($errors->has('password'))
                     <span class="help-block">
@@ -82,15 +82,18 @@
 <script>
 $(document).ready(function (){
     var formInputs = $('input[type="text"],input[type="email"],input[type="password"]');
+    var placeholder = "(半角6文字以上)";
     $('#name,label[for="name"]').addClass('formTop');
     $('#kanri_0').attr('checked', true);
     formInputs.focus(function () {
         $(this).parent().children('.form-style').addClass('formTop');
         $('div#formWrapper').addClass('darken-bg');
+        $('.placeholder').text('');
     });
     formInputs.focusout(function (){
         if ($.trim($(this).val()).length == 0) {
         $(this).parent().children('.form-style').removeClass('formTop');
+        $('.placeholder').text(placeholder);
         }
     });
 });
