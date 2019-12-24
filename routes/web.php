@@ -15,7 +15,7 @@ Route::get('/logout','TeamController@getLogout');
 Route::get('/ichiran','UserTableController@ichiran');
 
 // ユーザー削除
-Route::delete('/user/{user}','UserTableController@destroy');
+Route::delete('/user/{users}','UserTableController@destroy');
 
 // コンタクト画面表示
 Route::get('/contact','MailSendController@contact');

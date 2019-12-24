@@ -23,7 +23,7 @@
           @if(Auth::user()->kanri ==1)
           <!-- 本: 削除ボタン -->
           <td>
-            <form action="{{ url('users/'.$users->id) }}" method="POST"> {{ csrf_field() }}
+            <form action="{{ url('user/'.$users->id) }}" method="POST"> {{ csrf_field() }}
               {{ method_field('DELETE') }}
               <button type="submit" class="btn btn-danger"> 削除</button>
             </form>

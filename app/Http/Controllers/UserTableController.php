@@ -22,8 +22,8 @@ class UserTableController extends Controller
     }
     
     // ユーザー削除
-    public function destroy(Usder $user) {
-      $user->delete();
+    public function destroy(User $users) {
+      $users->delete();
       return redirect('ichiran');
     }
 }
