@@ -52,9 +52,9 @@
                     <label class="col-md-4 control-label form-style">権限</label>
                     <div class="radioBox form-style">
                         <div class="radio">
-                            <input type="radio" id="kanri_1" name="kanri" val="1">
+                            <input type="radio" id="kanri_1" name="kanri" value=1>
                             <label for="kanri_1">管理者</label>
-                            <input type="radio" id="kanri_0" name="kanri" val="0" checked>
+                            <input type="radio" id="kanri_0" name="kanri" value=0 checked>
                             <label for="kanri_0">一般</label>
                         </div>
                     </div>
@@ -82,6 +82,7 @@
 <script>
 $(document).ready(function (){
     var formInputs = $('input[type="text"],input[type="email"],input[type="password"]');
+    $('#kanri_0').attr('checked', true)
     formInputs.focus(function () {
         $(this).parent().children('.form-style').addClass('formTop');
         $('div#formWrapper').addClass('darken-bg');
