@@ -82,7 +82,8 @@
 <script>
 $(document).ready(function (){
     var formInputs = $('input[type="text"],input[type="email"],input[type="password"]');
-    $('#kanri_0').attr('checked', true)
+    $('#name,label[for="name"]').addClass('formTop');
+    $('#kanri_0').attr('checked', true);
     formInputs.focus(function () {
         $(this).parent().children('.form-style').addClass('formTop');
         $('div#formWrapper').addClass('darken-bg');
