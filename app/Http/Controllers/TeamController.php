@@ -7,6 +7,7 @@ use Validator;
 use Auth;
 use Carbon\Carbon;
 use App\Message; 
+use App\Kidoku; 
 
 class TeamController extends Controller
 {
@@ -23,6 +24,7 @@ public function home() {
 // 連絡一覧へ表示
 public function index() {
   // INNAR JOIN
+  $kidokus = Kidoku::where('user_id',Auth::user()->id)->orderBy('created_at', 'asc')->get();
   $messages = \DB::table('messages')
   ->select(
     'messages.id as id',
@@ -36,7 +38,8 @@ public function index() {
   ->where('users.shisetuID', '=', Auth::user()->shisetuID)
   ->orderBy('messages.published', 'desc')
   ->get();
-  return view('index', ['messages' => $messages]);
+  return view('index', ['messages' => $messages,'kidokus' => $kidokus
+  ]);
 }
 
 //新規連絡登録
